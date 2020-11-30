@@ -1,0 +1,10 @@
+{
+ "defaultTitle": "凌猫智行",
+ "transparentTitle": "none",
+ "titlePenetrate":"NO",
+  "usingComponents": {
+   "modal": "mini-ali-ui/es/modal/index",
+   "loading":"mini-ali-ui/es/loading/index",
+   "popup": "mini-ali-ui/es/popup/index"
+ }
+}

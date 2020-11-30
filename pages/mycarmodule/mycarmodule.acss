@@ -1,0 +1,72 @@
+.box{
+  height: 99vh;
+  border-top: 1vh solid #efefef;
+  background: #fff;
+}
+.car_module_name{
+  height: 8vh;
+  line-height: 8vh;
+  padding-left: 40rpx;
+  /* border: 1rpx solid; */
+}
+.car_img{
+  width: 50%;
+  height: 128px;
+  margin-left: 25%;
+  margin-top: 10vh;
+  /* border: 1px solid; */
+}
+.cat_text_box{
+  width: 90%;
+  height: 20vh;
+  margin:0 auto;
+  margin-top: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid; */
+}
+.text_top{
+  text-align: center;
+  font-size: 45rpx;
+  font-weight: bold;
+}
+.text_bottom{
+  margin-top: 30rpx;
+  text-align: center;
+}
+.bottom_btn{
+  height: 120rpx;
+  margin-top: 7vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 1px solid; */
+}
+.check_out_btn,.drop_btn{
+  width: 40%;
+  color: #fff;
+  background: #ff8234;
+  border: none;
+  border-radius: 30px;
+}
+.check_out_btn:hover{
+  color: #fff;
+  background: #ff8234;
+}
+.drop_btn:hover{
+  color: #fff;
+  background: #ff8234;
+}
+.car_number{
+  text-align: center;
+  color: #ff8234;
+  font-weight: bold;
+  font-size: 60rpx;
+  margin-top: 10rpx;
+}
+.module_img{
+  width: 100%;
+  height: 180rpx;
+  margin-top: 20rpx;
+}

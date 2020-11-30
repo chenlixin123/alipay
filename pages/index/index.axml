@@ -1,0 +1,124 @@
+ <view class="Floating_layer">
+    <view class="Floating_layer_left" onTap="tap_explain">
+        预约说明
+    </view>
+    <view class="Floating_layer_right" onTap="tap_Personal">
+        个人中心
+    </view>
+  </view>
+<view class='box'>
+  <!-- 车位渲染 -->
+  <view class='indexStyle'>
+    <view class='chessboard' a:for="{{chessboardXvalue}}" a:for-item="x" a:key="{{index}}">
+      <view class='chessboard-y' a:for="{{chessboardYvalue}}" a:for-item="y" a:key="{{index1}}">
+        <view class='ge' a:if="{{parkingMap[(x + ',' +y)] && parkingMap[(x + ',' +y)] !== null}} ">
+          <view a:if="{{ parkingMap[(x + ',' +y)].type == 'button'}}" style=" width: {{ parkingMap[(x+','+y)].width * 100 + '%' }}; height:{{parkingMap[(x+','+y)].height  * 75+'%'}};" class="{{(parkingMap[(x+','+y)].index == ind) ? 'self-bt': (parkingMap[(x + ',' +y)].status  == 2) ? 'self-btn' : (parkingMap[(x + ',' +y)].status  == 1) ? 'self-btns' : 'self-btnes'}}" onTap="park" data-item="{{ parkingMap[(x + ',' +y)].name}}" data-status="{{parkingMap[(x + ',' +y)].status}} " data-dex="{{ parkingMap[(x + ',' +y)].index}}" data-val="{{parkingMap[(x + ',' +y)].stallId}}" disable='{{canClick}}'>
+          {{ parkingMap[(x + ',' +y)].name}}
+          </view>
+          <image a:if="{{parkingMap[(x+','+y)].type == 'img'}}" style=" width: {{ parkingMap[(x+','+y)].width * 100 + '%' }}; height:{{parkingMap[(x+','+y)].height  * 100+'%'}};" src="{{parkingMap[(x+','+y)].src}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 预约说明弹框 -->
+  <view class="module_explain_box" a:if='{{modalOpened_explain}}'>
+    <view style="width:80%;text-align:center;background:#fff;border-radius:10px;padding-top:40rpx;padding-left:40rpx;padding-right:40rpx;margin:0 auto;margin-top:25vh;">
+      <view class="module_explain_title">
+      预约说明
+      </view>
+      <view class="module_explain_text">
+      本场为免费预约使用，在停车场出口统一缴费
+      </view>
+      <view class="br">
+      </view>
+      <view class="module_explain_title">
+      车场说明
+      </view>
+      <view class="module_explain_text_text">
+        <view class="module_explain_text_title2" style="width:40%;">
+        {{businessTime}}
+        </view>
+        <view class="module_explain_text_title2" a:if='{{freeMins}}'>
+        {{freeMins}}
+        </view>
+        <view class="module_explain_text_title2" a:else>
+        无
+        </view>
+           <view class="module_explain_text_title2" a:if='{{topFee}}'>
+        {{topFee}}
+        </view>
+        <view class="module_explain_text_title2" a:else>
+        无
+        </view>
+      </view>
+      <view class="module_explain_text_title">
+        <view class="module_explain_text_title1" style="width:40%;">
+        运营时段
+        </view>
+        <view class="module_explain_text_title1">
+        免费时长
+        </view>
+        <view class="module_explain_text_title1">
+        24小时封顶
+        </view>
+      </view>
+      <view class="br"></view>
+      <view style="display:flex;margin-top:20rpx;margin-bottom:20rpx;">
+        <view style="color:#666;font-weight:none;">
+        计价规则
+        </view>
+        <view style="color:#ff8234;margin-left:20rpx;">
+        {{currentFee}}
+        </view>
+      </view>
+      <view style="color:#ff8234;height:100rpx;line-height:100rpx;border-top:1px solid #efefef;font-size:40rpx;font-weight:bold;" onTap="onModalClick_explain">确定</view>
+    </view>
+  </view>
+  <!-- 车位占用弹框 -->
+  <modal show="{{modalOpened_occupy}}" onModalClick="onModalClick_occupy">
+    <!--<view slot="header">预约说明</view> -->
+    <view class="module_occupy">
+      <text class="module_occupy_number">{{carname}}</text>{{name_text}}
+    </view>
+    <view slot="footer" style="color:#ff8234;">确定</view>
+  </modal>
+  <!-- 车位预约弹框 -->
+  <modal show="{{modalOpened_yuyue}}" showClose="{{false}}" onButtonClick="onButtonClick_yuyue" buttons="{{buttons5}}">
+    <view slot="header">车位预约</view>
+    <view style="text-align:left;color:#666;">
+      {{groupName}}
+      <text style="color:#ff8234;font-weight:bold;margin-left:5rpx;">{{carname}}号车位</text>
+    </view>
+    <view style="text-align:left;color:#666;">
+      预约成功后车位免费保留{{freeMins}}之后
+    </view>
+    <view style="color:#666;margin-top:10rpx;">
+      开始正常计费
+    </view>
+  </modal>
+  <!-- 车牌号弹框 -->
+  <modal show="{{modalOpened_chepai}}" showClose="{{false}}" onButtonClick="onButtonClick_chepai" buttons="{{buttons4}}">
+    <view slot="header"style="position: relative;">车位预约
+      <image class="add_img" onTap="img_add" src="../../assets/icon/tianjiatankuang.png"/></view>
+    <view class="plate_number_box" a:for='{{plateList}}' a:key='index'>
+      <view>
+          {{item.vehMark}}
+      </view>
+      <image a:if='{{indexs == index}}' class="choice" src="../../assets/icon/xuanzhong.png"/>
+      <image a:else class="choice" src="../../assets/icon/weixuanzhong.png" data-index='{{index}}' data-item='{{item}}' onTap="img_tap"/>
+    </view>
+  </modal>
+  <!--<loading color="#ff8234" /> -->
+  <view class="pop_box" a:if='{{showBottom}}'>
+  </view>
+      <popup show="{{showBottom}}" position="bottom" onClose="onPopupClose" mask="{{false}}">
+      <view class="bottom">
+        <button class="bottom_btn" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
+    授权手机号
+        </button>
+        <button class="cancel_btn" onTap="cancel_btn">
+取消
+        </button>
+      </view>
+    </popup>
+</view>

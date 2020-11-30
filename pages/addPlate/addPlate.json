@@ -1,0 +1,9 @@
+{
+ "defaultTitle": "添加车牌号",
+ "transparentTitle": "none",
+ "titlePenetrate":"NO",
+  "usingComponents": {
+   "modal": "mini-ali-ui/es/modal/index",
+   "loading":"mini-ali-ui/es/loading/index"
+ }
+}

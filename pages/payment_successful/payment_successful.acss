@@ -1,0 +1,42 @@
+.box{
+  height: 100vh;
+  background: #fff;
+  /* border: 1px solid; */
+}
+.pay_title{
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-top: 40rpx;
+  /* border: 1px solid; */
+}
+.pay_number{
+  text-align: center;
+  font-size: 60rpx;
+  font-weight: bold;
+  margin-top: 30rpx;
+  /* border: 1px solid; */
+  margin-bottom: 5vh;
+}
+.box_top_box{
+  border-top: 1px solid #efefef;
+  background: #fff;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1vh;
+}
+.box_top_box_left{
+  margin-left: 40rpx;
+}
+.box_top_box_right{
+  margin-right: 40rpx;
+}
+.pay_btn{
+  width: 50%;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 80rpx;
+}

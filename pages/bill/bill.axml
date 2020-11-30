@@ -1,0 +1,99 @@
+<view class="box">
+    <view class="box_top"> 
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          停车场
+        </view>
+        <view class="box_top_box_right">
+          {{total_data.prefectureName}}
+        </view>
+      </view>
+       <view class="box_top_box">
+        <view class="box_top_box_left">
+          车位号
+        </view>
+        <view class="box_top_box_right">
+          {{total_data.stallName}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          车牌号码
+        </view>
+        <view class="box_top_box_right">
+          {{total_data.plateNumber}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          开始时间
+        </view>
+        <view class="box_top_box_right">
+          {{starttime}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          结束时间
+        </view>
+        <view class="box_top_box_right">
+          {{endtime}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          停车时长
+        </view>
+        <view class="box_top_box_right">
+          {{parkingTime}}
+        </view>
+      </view>
+    </view>
+    <view class="box_center"> 
+       <view class="box_center_box">
+        <view class="box_center_box_left">
+          停车券
+        </view>
+        <view class="box_center_box_right">
+          选择停车券>
+        </view>
+      </view>
+       <view class="box_center_box">
+        <view class="box_center_box_left">
+          支付方式
+        </view>
+        <view class="box_center_box_right">
+          支付宝>
+        </view>
+      </view>
+    </view>
+    <view class="box_bottom"> 
+       <view class="box_bottom_box">
+        <view class="box_bottom_box_left">
+          应付金额
+        </view>
+        <view class="box_bottom_box_right">
+          {{total_data.totalAmount}}元
+        </view>
+      </view>
+
+      <view class="box_bottom_box">
+        <view class="box_bottom_box_left">
+          优惠金额
+        </view>
+        <view class="box_bottom_box_right">
+          0.00元
+        </view>
+      </view>
+
+      <view class="box_bottom_box">
+        <view class="box_bottom_box_left">
+          实付金额
+        </view>
+        <view class="box_bottom_box_right">
+          {{total_data.totalAmount}}元
+        </view>
+      </view>
+      <button class="bill_btn" onTap="bill_click" size="default" >确认支付</button>
+    </view>
+</view>

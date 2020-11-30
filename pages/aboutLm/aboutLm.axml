@@ -1,0 +1,13 @@
+<view class="container">
+   <image class="login" src="../../assets/img/logo-icon.png"></image>
+   <view class="title">
+    欢迎使用凌猫智能停车服务
+   </view>
+   <view class="text">
+   凌猫linkmore是基于物联网技术开发的网约停车服务平台。用户可通过凌猫linkmore在线查询、预约停车位，移动支付停车费，并在凌猫linkmore平台上管理个人车位。
+   </view>
+   <view class="footer">
+      <view onTap='call'>客服电话：010-85841631 <image src="../../assets/img/phone-icon.png"></image></view>
+      <view>商务洽谈：business@papayixing.com</view>
+   </view>
+</view>

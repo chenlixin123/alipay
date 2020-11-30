@@ -1,0 +1,155 @@
+.box{
+  height: 96vh;
+  background-image: linear-gradient(#fab286ad, #fff);
+  padding-top: 3vh;
+}
+.user{
+  width: 95%;
+  height: 23vh;
+  background: #fff;
+  border-radius: 10px;
+  margin-left: 2.5%;
+  /* border: 1px solid; */
+}
+.user_name{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.no_text,.yes_text{
+  width: 400rpx;
+  height: 20vh;
+  margin-left:60rpx;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.no_img,.yes_img{
+  width: 100rpx;
+  height: 100rpx;
+  /* border: 1px solid; */
+}
+.login_btn{
+  width: 250rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 5px;
+}
+.user_mobile{
+  margin-top: 20rpx;
+}
+.no_authorization_box{
+  height: 72vh;
+  background: #fff;
+  margin-top: 1vh;
+  text-align: center;
+  line-height: 50vh;
+  /* border: 1px solid; */
+}
+.yes_authorization_box{
+  height: 72vh;
+  background-image: linear-gradient(#f8e5daad, #f7f7f7);
+  margin-top: 1vh;
+}
+.plate_number_box{
+   width: 95%;
+  margin-left: 2.5%;
+  border-radius: 10px;
+  background: #fff;
+  padding-bottom: 50rpx;
+  /* border: 1px solid; */
+}
+.plate_number_title{
+ height: 7vh;
+  line-height: 7vh;
+  margin-left: 30rpx;
+  font-weight: bold;
+  /* border: 1px solid; */
+}
+.plate_number_list{
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 42rpx;
+  color: #666;
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid #efefef;
+  margin: 0 auto;
+  margin-bottom: 38rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plate_number_add{
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 40rpx;
+  color: #666;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #efefef;
+  position: relative;
+  margin: 0 auto;
+}
+.car_icon{
+  width: 64rpx;
+  height: 64rpx;
+  margin-left: 41rpx;
+
+}
+.delete_icon{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 43rpx;
+}
+.other_box{
+   width: 95%;
+  height: 20vh;
+  margin-left: 2.5%;
+  margin-top: 1vh;
+  border-radius: 10px;
+  background: #fff;
+  /* border: 1px solid; */
+}
+.other_title{
+  height: 7vh;
+  line-height: 7vh;
+  font-weight: bold;
+  margin-left: 30rpx;
+  /* border: 1px solid; */
+}
+.other_list{
+  height: 13vh;
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid; */
+}
+.user_guide{
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 30rpx;
+  text-align: center;
+  /* border: 1px solid; */
+}
+.user_guide_icon{
+  /* margin-top: 10rpx; */
+  margin-bottom: 15rpx;
+  width: 35px;
+  height: 35px;
+}
+.deleteBtn {
+  color: #f93a4a;
+  font-weight: bolder;
+}
+.cancelBtn {
+  color: #ccc;
+}
+.buttonBold, .modalButtonBold .am-modal-footer {
+  font-weight: bold;
+  color: #ff8234;
+}
+.buttoncancel{
+  color: #999;
+}

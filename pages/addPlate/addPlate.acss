@@ -1,0 +1,138 @@
+.add-plate {
+ overflow-x: hidden;
+background: #fff;
+}
+
+.plate-txt {
+  font-size: 32rpx;
+  color: #666;
+  margin: 40rpx 0 80rpx 30rpx;
+}
+
+.plate-inp {
+  margin-left: 78rpx;
+  position: relative;
+  width: 100%;
+  height: 70rpx;
+}
+
+.plate-zh {
+  width: 70rpx;
+  height: 68rpx;
+  margin-left: 17rpx;
+  float: left;
+  border-radius: 8rpx;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 68rpx;
+}
+
+.inp-img {
+  width: 70rpx;
+  height: 68rpx;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.inp-img2 {
+  width: 70rpx;
+  height: 68rpx;
+  display: inline-block;
+  position: absolute;
+  left: 100rpx;
+  top: 0;
+}
+
+.plate-circle {
+  width: 18rpx;
+  height: 18rpx;
+  position: absolute;
+  top: 25rpx;
+  margin: 0 0 0 31rpx;
+}
+
+.plate-num {
+  font-size: 32rpx;
+  color: #999;
+  width: 363rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  display: inline-block;
+  margin-left: 70rpx;
+  position: absolute;
+  top: 0;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.eight {
+  margin-top: 25rpx;
+}
+
+.eight-num {
+  float: right;
+  margin: 0 77rpx 0 0;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.eight-img {
+  float: right;
+  width: 21rpx;
+  height: 21rpx;
+  margin: 9rpx 9rpx 0 0;
+  /* position: absolute;
+  top: 282rpx;
+  left: 471rpx; */
+}
+
+.add-btn {
+  width: 594rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  outline: none;
+  background: #f66913;
+  border-radius: 60rpx;
+  color: #fff;
+  font-size: 38rpx;
+  /* margin-top: 424rpx; */
+  margin: 0 auto;
+  margin-top: 390rpx;
+  /* margin-bottom: 248rpx; */
+}
+
+.key-txt {
+  width: 100%;
+  height: 92rpx;
+  line-height: 92rpx;
+  color: #f66913;
+}
+
+.key-del {
+  margin: 0 540rpx 0 30rpx;
+}
+
+.key-btn-container {
+  width: 100%;
+  height: 361rpx;
+  background: #d3d4d9;
+  padding-left: 6rpx;
+}
+
+.key-btn {
+  width: 60rpx;
+  height: 61rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  display: inline-block;
+  text-align: center;
+  margin: 25rpx 7rpx 0 7rpx;
+  line-height: 61rpx;
+  font-size: 23rpx;
+}
+
+.keyword {
+  position: fixed;
+  bottom: 0;
+}

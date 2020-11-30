@@ -1,0 +1,69 @@
+.box{
+  height: 98vh;
+  padding-top: 1vh;
+}
+.box_top_box{
+  border-top: 1px solid #efefef;
+  background: #fff;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1vh;
+}
+.box_top_box_left{
+  margin-left: 40rpx;
+}
+.box_top_box_right{
+  margin-right: 40rpx;
+}
+.box_center{
+  margin-top: 1vh;
+}
+.box_center_box{
+border-top: 1px solid #efefef;
+background: #fff;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1vh;
+}
+.box_center_box_left{
+  margin-left: 40rpx;
+}
+.box_center_box_right{
+  margin-right: 40rpx;
+  color: #ff8234;
+}
+.box_bottom{
+   margin-top: 1vh;
+  /* border: 1px solid; */
+}
+.box_bottom_box{
+border-top: 1px solid #efefef;
+background: #fff;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1vh;
+}
+.box_bottom_box_left{
+  margin-left: 40rpx;
+}
+.box_bottom_box_right{
+  margin-right: 40rpx;
+}
+.bill_btn{
+  width: 80%;
+  background: #ff8234;
+  color: #fff;
+  border-radius: 30px;
+  margin: 0 auto;
+  margin-top: 4vh;
+}
+.bill_btn:hover{
+  background: #ff8234;
+  color: #fff;
+}

@@ -1,0 +1,224 @@
+.box{
+  width: 100%;
+  height: 100vh;
+}
+.Floating_layer{
+  border-top: 1px solid #efefef;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  font-weight: bold;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Floating_layer_left{
+  margin-left: 60px;
+}
+.Floating_layer_right{
+  margin-right: 60px;
+}
+.Pop_up{
+  width: 70%;
+  height: 30vh;
+  background: #fff;
+  margin-top: 30vh;
+  border-radius: 10px;
+}
+.module_occupy_number{
+  color: #ff8234;
+  font-weight: bold;
+}
+.deleteBtn {
+  color: #f93a4a;
+  font-weight: bolder;
+}
+.cancelBtn {
+  color: #ccc;
+}
+.buttonBold, .modalButtonBold .am-modal-footer {
+  font-weight: bold;
+  color: #ff8234;
+}
+.buttoncancel{
+  color: #999;
+}
+.module_explain_box{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5)
+}
+.module_explain_title{
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.module_explain_text{
+  color: #ff8234;
+}
+.br{
+  width: 100%;
+  border-top: 1px solid rgb(241, 241, 241);
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.module_explain_text_title{
+  display: flex;
+  justify-content: space-around;
+}
+.module_explain_text_text{
+  display: flex;
+  color:#ff8234;
+  margin-bottom: 15rpx;
+}
+.module_explain_text_title1{
+  width:33.3%;
+  /* border:1px solid; */
+}
+.module_explain_text_title2{
+  width:33.3%;
+  /* border: 1px solid; */
+}
+.add_img{
+  width:40rpx;
+  height:40rpx;
+  position: absolute;
+  right: 0;
+  top:0;
+}
+.choice{
+  width:40rpx;
+  height:40rpx;
+}
+.plate_number_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15rpx;
+  font-size: 35rpx;
+}
+.indexStyle {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 0;
+  background: #f7f6f6;
+  font-size: 35rpx;
+  color: #000;
+  margin-top: 88rpx;
+}
+.chessboard {
+  text-align: center;
+  width: 68rpx;
+  line-height: 78rpx;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.chessboard-y {
+  text-align: center;
+  width: 68rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  /* border-left: solid 1rpx #DEDEDE;
+  border-top: solid 1rpx #DEDEDE; */
+  padding: 0;
+  vertical-align: middle;
+}
+.ge {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  text-align: center;
+}
+.self-btn {
+  text-align: center;
+  vertical-align: middle;
+  background: #ffb489;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+
+.self-btns {
+  text-align: center;
+  vertical-align: middle;
+  background: #fff;
+  color: #000;
+  /* border: 1px solid #c6c5c5; */
+  outline: none;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+
+.self-btnes {
+  text-align: center;
+  vertical-align: middle;
+  background: #c6c5c5;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+
+.self-bt {
+  text-align: center;
+  vertical-align: middle;
+  background: #f66913;
+  color: #fff;
+  /* color: #000; */
+  /* border: 2px solid #f66913; */
+  outline: none;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+.pop_box{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5)
+}
+.bottom{
+  background: #fff;
+  border: 1px solid #fff;
+}
+.bottom_btn{
+  height: 130rpx;
+  line-height: 130rpx;
+  color: #ff8234;
+  border: none;
+  border-bottom: 1px solid #efefef;
+}
+.cancel_btn{
+  color: #999;
+  height: 130rpx;
+  line-height: 130rpx;
+  border: none;
+  border-top: 1px solid #efefef;
+}

@@ -1,0 +1,6 @@
+{
+  "ignoreWebViewDomainCheck": true,
+  "ignoreHttpDomainCheck": true,
+  "enableLegacyRemoteDebug": true,
+  "enableDistFileMinify": true
+}

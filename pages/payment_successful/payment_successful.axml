@@ -1,0 +1,77 @@
+<view class="box">
+  <view class="pay_title">
+    支付成功
+  </view>
+  <view class="pay_number">
+    ￥ {{data.actualAmount}}
+  </view>
+    <view class="box_top"> 
+     <view class="box_top_box">
+        <view class="box_top_box_left">
+          车场名称
+        </view>
+        <view class="box_top_box_right">
+          {{data.prefectureName}}
+        </view>
+      </view>
+       <view class="box_top_box">
+        <view class="box_top_box_left">
+          车位号
+        </view>
+        <view class="box_top_box_right">
+          {{data.stallName}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          车牌号码
+        </view>
+        <view class="box_top_box_right">
+          {{data.plateNumber}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          开始时间
+        </view>
+        <view class="box_top_box_right">
+          {{starttime}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          结束时间
+        </view>
+        <view class="box_top_box_right">
+          {{endtime}}
+        </view>
+      </view>
+            <view class="box_top_box">
+        <view class="box_top_box_left">
+          订单编号
+        </view>
+        <view class="box_top_box_right">
+          {{data.orderNo}}
+        </view>
+      </view>
+      <view class="box_top_box">
+        <view class="box_top_box_left">
+          停车时长
+        </view>
+        <view class="box_top_box_right">
+          {{data.parkingTime}}
+        </view>
+      </view>
+            <view class="box_top_box" style="border-bottom:1px solid #efefef;">
+        <view class="box_top_box_left">
+          优惠减免
+        </view>
+        <view class="box_top_box_right">
+          0.0
+        </view>
+      </view>
+    </view>
+    <button class="pay_btn" onTap="pay_click">
+    完成
+    </button>
+</view>

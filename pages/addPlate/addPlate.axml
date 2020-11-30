@@ -1,0 +1,28 @@
+<view class='add-plate'>
+   <view class='plate-txt'>请添加真实有效的车牌号码</view>
+   <view class='plate-inp'>
+      <view onTap='plateZh' class='plate-zh'>{{zhData[0]}}</view>
+      <view onTap='inMsg' class='plate-zh'>{{zhData[1]}}</view>
+      <image class='plate-circle' src='../../../assets/img/circle.png'></image>
+      <view class='plate-num' onTap='inMsg'>
+         <text a:for="{{zhData}}" a:key="index" a:if="{{index>1}}">{{item}}</text>
+         <text a:if="{{zhData.length<3}}">请输入完整信息</text>
+      </view>
+   </view>
+   <view class='eight'>
+      <view class='eight-num'>8位新能源车牌</view>
+      <image onTap='changeNum' class='eight-img' src="{{CanNum == 7?'../../assets/icon/tianjiachepaihao.png':'../../assets/icon/xunahzong.png'}}"></image>
+   </view>
+   <button onTap='addPlete' class='add-btn' data-clicknum=''>保存</button>
+   <view class='keyword' a:if="{{keyWord==true}}">
+      <view class='key-txt'>
+         <text onTap='keyDel' class='key-del'>删除</text>
+         <text onTap='keyTrue' class='key-true'>确定</text>
+      </view>
+      <view class='key-btn-container'>
+         <view class='key-btn' onTap='inPleteNumber' data-key="{{item}}" a:for="{{keyBtn}}" a:key="index">
+            {{item}}
+         </view>
+      </view>
+   </view>
+</view>

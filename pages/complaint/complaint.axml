@@ -1,0 +1,8 @@
+<view class='car-error'>
+  <textarea class='error-text' placeholder='输入您对凌猫的意见......' maxlength='300' adjust-position='{{false}}' onInput="inDesc" onFocus="foucus" onBlur="blur" style='bottom:{{inputBottom}}px'></textarea>
+  <view style="text-align:right;">
+      <view a:if="{{descNum==0}}" class='error-inNum'>最多输入300字</view>
+  <view a:else class='error-inNum'>还可以输入{{300-descNum}}字</view>
+  </view>
+  <button onTap='switchs' disabled='{{btnFlag}}' class="error-btn {{!btnFlag ? 'error-btn-active' : ''}}">确认发送</button>
+</view>

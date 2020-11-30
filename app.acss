@@ -1,0 +1,28 @@
+page {
+  background: #f7f7f7;
+}
+.deleteBtn {
+  color: #f93a4a;
+  font-weight: bolder;
+}
+.cancelBtn {
+  color: #ccc;
+}
+.buttonBold, .modalButtonBold .am-modal-footer {
+  font-weight: bold;
+  color: #ff8234;
+}
+.buttoncancel{
+  color: #999;
+}
+.tips{
+  margin-left: 10px;
+  margin-top: 20px; 
+  color: red;
+  font-size: 12px;
+}
+.tips .item {
+  margin: 5px 0;
+  color: #888888;
+  line-height: 14px;
+}

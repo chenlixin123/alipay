@@ -1,0 +1,70 @@
+<view class="box">
+  <view class="car_module_name">
+    {{prefectureName}}<text style="color:#ff8234;font-weight:bold;">{{stallName}}号车位</text>
+  </view>
+  <image class="car_img" src="../../assets/img/car.png"/>
+  <view class="car_number">
+      {{stallName}}
+  </view>
+  <view class="cat_text_box">
+    <view class="text1">
+      <view class="text_top">
+        {{plateNumber}}
+      </view>
+      <view class="text_bottom">
+        车牌号
+      </view>
+    </view>
+    <view class="text1">
+      <view class="text_top">
+        {{parkingTime}}
+      </view>
+      <view class="text_bottom">
+        时长
+      </view>
+    </view>
+    <view class="text1">
+      <view class="text_top">
+        {{amount}}
+      </view>
+      <view class="text_bottom">
+        费用(元)
+      </view>
+    </view>
+  </view>
+  <view class="bottom_btn">
+    <button class="check_out_btn"  onTap="check_out">
+    结账离场
+    </button>
+    <button class="drop_btn"  onTap="drop">
+    降下地锁
+    </button>
+  </view>
+    <!-- 降锁弹框 -->
+   <modal
+		show="{{modalOpened_drop}}"
+    showClose="{{false}}"
+    onButtonClick="onButtonClick_drop"
+    buttons="{{buttons5}}"
+	>
+		<view slot="header">降锁提示</view>
+		<view style="text-align:left;color:#666;">
+      {{prefectureName}}<text style="color:#ff8234;font-weight:bold;">{{stallName}}</text>号车位
+    </view>
+    <view style="text-align:left;color:#666;">
+      请到达车位后再降下地锁，以免被其他车辆占位
+    </view>
+	</modal>
+   <!-- 离场弹框 -->
+   <modal
+		show="{{modalOpened_check_out}}"
+    showClose="{{false}}"
+    onButtonClick="onButtonClick_check_out"
+    buttons="{{buttons4}}"
+	>
+		<view style="text-align:left;color:#ff8234;font-weight:bold;">
+      结账将会升起地锁,为了您的车辆安全
+    </view>
+    <image class="module_img" src="../../assets/img/tu.png"/>
+	</modal>
+</view>

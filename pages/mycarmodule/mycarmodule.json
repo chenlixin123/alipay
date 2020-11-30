@@ -1,0 +1,8 @@
+{
+ "defaultTitle": "当前预约",
+ "transparentTitle": "none",
+ "titlePenetrate":"NO",
+ "usingComponents": {
+   "modal": "mini-ali-ui/es/modal/index"
+ }
+}

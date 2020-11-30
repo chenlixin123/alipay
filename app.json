@@ -1,0 +1,17 @@
+{
+  "pages": [ 
+    "pages/index/index",
+    "pages/personal_center/personal_center",
+    "pages/mycarmodule/mycarmodule",
+    "pages/bill/bill",
+    "pages/payment_successful/payment_successful",
+    "pages/addPlate/addPlate",
+    "pages/aboutLm/aboutLm",
+    "pages/complaint/complaint"
+  ],
+  "window": {
+"transparentTitle": "always",
+"defaultTitle": "",
+"titlePenetrate":"YES"
+}
+}
