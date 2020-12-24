@@ -1,0 +1,10 @@
+{
+  "current": null,
+  "modes": [
+    {
+      "title": "传参进入",
+      "page": "pages/index/index",
+      "pageQuery": "shopid=35305761"
+    }
+  ]
+}

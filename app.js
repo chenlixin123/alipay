@@ -5,6 +5,7 @@ App({
   mobile:'',
   number:false,
   tap:true,
+  parkCode:'',
   onLaunch(options) {
     // 第一次打开
     // options.query == {number:1}

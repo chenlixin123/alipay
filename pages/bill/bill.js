@@ -124,7 +124,7 @@ Page({
             if (res.data.status) {
               if (!res.data.data.alipayMini) {
                  my.hideLoading();
-                my.navigateTo({
+                my.reLaunch({
                   url: "/pages/payment_successful/payment_successful"
                 });
                 return
@@ -142,7 +142,7 @@ Page({
                     //   duration: 800,
                     // });
                     // setTimeout(() => {
-                      my.navigateTo({
+                      my.reLaunch({
                         url: "/pages/payment_successful/payment_successful"
                       });
                     // }, 1500)

@@ -1,90 +1,51 @@
 <view class="box">
-<view class="user">
-  <view class="no_text" a:if='{{login == false}}' >
-        <image class="no_img" src="../../assets/icon/touxiang.png"/>
-        <!-- <button class="login_btn" onTap="login_code">
+  <view class="user">
+    <view class="no_text" a:if='{{login == false}}' >
+      <image class="no_img" src="../../assets/icon/touxiang.png"/>
+      <!--<button class="login_btn" onTap="login_code">
+        登录授权</button> -->
+      <button class="login_btn" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
         登录授权
-        </button> -->
-        <button class="login_btn" open-type="getAuthorize"
-        onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
-        登录授权
-        </button>
+      </button>
     </view>
     <view class="no_text" a:if='{{login == true}}' >
-        <image class="no_img" src="../../assets/icon/touxiang.png"/>
-        <view class="user_name">
+      <image class="no_img" src="../../assets/icon/touxiang.png"/>
+      <view class="user_name">
           {{user_mobile}}
-        </view>
+      </view>
     </view>
-    <!-- <view class="yes_text" a:if='{{login == true}}'>
-        <cover-image class="yes_img" src="../../assets/icon/touxiang.png"/>
-        <view>
-        <view class="user_name">
-          {{user_mobile}}
-        </view>
-            <view class="user_mobile">
-          {{user_mobile}}
-        </view>
-        </view>
-        
-    </view> -->
-</view>
+    <!--<view class="yes_text" a:if='{{login == true}}'><cover-image class="yes_img" src="../../assets/icon/touxiang.png"/><view><view class="user_name">
+          {{user_mobile}}</view><view class="user_mobile">
+          {{user_mobile}}</view></view></view> -->
+  </view>
   <view class="no_authorization_box" a:if='{{login == false}}'>
       请先进行登录授权
   </view>
   <view class="yes_authorization_box" a:if='{{login == true}}'>
     <view class="plate_number_box">
+
+
       <view class="plate_number_title">
           我的车辆
       </view>
-          <view class="plate_number_list" a:for='{{plateList}}' a:key='index'>
-          <image class="car_icon" src="../../assets/icon/qiche.png"/>
-          <text style="margin-right:237rpx;">{{item.vehMark}}</text>
+      <view class="plate_number_list" a:for='{{plateList}}' a:key='index'>
+        <image class="car_icon" src="../../assets/icon/qiche.png"/>
+        <text style="margin-left:20rpx;">{{item.vehMark}}</text>
         <image class="delete_icon" src="../../assets/icon/shanchu.png" onTap='delPlate' data-platenumber='{{item.vehMark}}' data-plateid='{{item.id}}' />
       </view>
       <view class="plate_number_add" onTap="add_plate" a:if='{{plateList.length < 3}}'>
         + 添加车牌
       </view>
     </view>
-    <!-- <view class="other_box">
-      <view class="other_title">
-          其他
-      </view>
-      <view class="other_list">
-        <view class="user_guide" onTap="goNorth">
-            <image class="user_guide_icon" src="../../assets/icon/yonghuzhinan.png"/>
-            <view>
-              用户指南
-            </view>
-        </view>
-        <view class="user_guide" onTap="goCall">
-            <image class="user_guide_icon" src="../../assets/icon/lianxikefu.png"/>
-            <view>
-              联系客服
-            </view>
-        </view>
-        <view class="user_guide" onTap="goComplaint">
-            <image class="user_guide_icon" src="../../assets/icon/tousujianyi.png"/>
-            <view>
-              投诉建议
-            </view>
-        </view>
-        <view class="user_guide" onTap="aboutLm">
-            <image class="user_guide_icon" src="../../assets/icon/guanyu.png"/>
-            <view>
-              关于
-            </view>
-        </view>
-      </view>
-    </view> -->
+    <!--<view class="other_box"><view class="other_title">
+          其他</view><view class="other_list"><view class="user_guide" onTap="goNorth"><image class="user_guide_icon" src="../../assets/icon/yonghuzhinan.png"/><view>
+              用户指南</view></view><view class="user_guide" onTap="goCall"><image class="user_guide_icon" src="../../assets/icon/lianxikefu.png"/><view>
+              联系客服</view></view><view class="user_guide" onTap="goComplaint"><image class="user_guide_icon" src="../../assets/icon/tousujianyi.png"/><view>
+              投诉建议</view></view><view class="user_guide" onTap="aboutLm"><image class="user_guide_icon" src="../../assets/icon/guanyu.png"/><view>
+              关于</view></view></view></view> -->
   </view>
   <!-- 删除弹框 -->
-   <modal
-		show="{{modalOpened_delete}}"
-    showClose="{{false}}"
-    onButtonClick="onButtonClick_delete"
-    buttons="{{buttons5}}"
-	>
-		<view slot="header">确定删除？</view>
-	</modal>
+  <modal show="{{modalOpened_delete}}" showClose="{{false}}" onButtonClick="onButtonClick_delete" buttons="{{buttons5}}">
+    <view slot="header">确定删除？</view>
+  </modal>
 </view>

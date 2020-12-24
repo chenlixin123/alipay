@@ -39,138 +39,140 @@ Page({
     plateId: '',//车牌ID
     prefectureId: '',//车区ID
     stallId: '',//车位ID
-    setInterval: ''
+    setInterval: '',
+    parkCode: ''
   },
-  onLoad(query) {
+  onLoad(options) {
     // 页面加载
     // my.alert({
-    //   title:query
+    //   title: JSON.stringify(options.shopid)
     // });
-    console.log(query)
+    // console.log(options.shopid)
     if (!app.token) {
-      my.showLoading({
-        content: '加载中...',
-        delay: 0,
-      });
       let that = this
-      my.getAuthCode({
-        scopes: ['auth_base'],//获取登录authCode
-        success: (res) => {
-          if (res.authCode) {
-            console.log('继续请求本公司接口')
-            my.request({
-              url: app.url.vx_login + '?authCode=' + res.authCode,//登录接口
-              method: 'GET',
-              data: {},
-              success: (result) => {
-                console.log(result)
-                if (result.data.status == false) {
-                  my.hideLoading();
-                  return
-                }
-                app.token = result.data.data.token
-                app.globalData = result.data.data
-                api.GET({
-                  url: app.url.car_list + '?parkCode=35305761',//渲染车位接口
-                  params: {},
-                  success: (res) => {
-                    // console.log(res)
-                    if (!res.data.status) {
-                      my.setNavigationBar({
-                        title: '凌猫智行'
-                      })
-                      my.hideLoading();
-                      return
-                    }
-                    let ss = []
-                    res.data.data.parkingDataMap.map((res) => {
-                      if (res.name != undefined && res.status == 1) {
-                        ss.push(res)
-                        that.setData({
-                          ss: ss
-                        })
-                      }
-                    })
-                    if (res.data && res.data.data) {
-                      my.setNavigationBar({
-                        title: res.data.data.groupName
-                      })
-                      that.setData({
-                        freeMins: res.data.data.freeMins,
-                        businessTime: res.data.data.businessTime,
-                        desc: res.data.data.descList,
-                        currentFee: res.data.data.currentFee,
-                        currentTimePeriod: res.data.data.currentTimePeriod + "   |  ",
-                        topFee: res.data.data.topFee,
-                        prefectureId: res.data.data.preId,
-                        groupName: res.data.data.groupName
-                      })
-                      if (res.data.data.parkingDataMap == "") {
-                        that.setData({
-                          parkingMap: null
-                        })
-                      } else if (res.data && res.data.data) {
-                        let parkingMap = {};
-                        res.data.data.parkingDataMap.forEach(item => {
-                          let key = (item.x) + ',' + (item.y)
-                          parkingMap[key] = item
-                        })
-                        // console.log(parkingMap)
-                        that.setData({
-                          chessboardXvalue: res.data.data.gridX,
-                          chessboardYvalue: res.data.data.gridY,
-                          parkingMap: parkingMap,
-                        })
-                      }
-                    }
-                  }
-                }, app.token)
-
-                if (!result.data.data.id) {
-                  console.log('用户未注册')
-                  my.hideLoading();
-                  app.login = false
-                  return
-                }
-                app.login = true
-                app.mobile = result.data.data.mobile
-                console.log('已经注册')
-
-                api.GET({
-                  url: app.url.current,//当前订单
-                  params: {},
-                  success(res) {
-                    // console.log(res, "LLLLLLLLLLLLLLLLLSSSSSSSSSSS")
-                    if (!res.data.status) {
-                      my.hideLoading();
-                      return
-                    }
-                    if (res.data.data == null) {
-                    } else {
-                      console.log('跳转页面')
-                      my.navigateTo({
-                        url: '/pages/mycarmodule/mycarmodule',
-                      })
-                    }
+        app.parkCode = options.shopid ? options.shopid : "35305761"
+        my.showLoading({
+          content: '加载中...',
+          delay: 0,
+        });
+        my.getAuthCode({
+          scopes: ['auth_base'],//获取登录authCode
+          success: (res) => {
+            if (res.authCode) {
+              console.log('继续请求本公司接口')
+              my.request({
+                url: app.url.vx_login + '?authCode=' + res.authCode,//登录接口
+                method: 'GET',
+                data: {},
+                success: (result) => {
+                  console.log(result)
+                  if (result.data.status == false) {
                     my.hideLoading();
+                    return
                   }
-                }, app.token)
-              },
-              fail: (error) => {
-                console.log(error)
-                my.showToast({
-                  type: 'fail',
-                  content: error.data,
-                  duration: 2000
-                });
-                my.hideLoading();
-              }
-            }, app.token)
-          } else {
-            my.hideLoading();
+                  app.token = result.data.data.token
+                  app.globalData = result.data.data
+                  api.GET({
+                    url: app.url.car_list + '?parkCode=' + app.parkCode,//渲染车位接口
+                    params: {},
+                    success: (res) => {
+                      // console.log(res)
+                      if (!res.data.status) {
+                        my.setNavigationBar({
+                          title: '凌猫智行'
+                        })
+                        my.hideLoading();
+                        return
+                      }
+                      let ss = []
+                      res.data.data.parkingDataMap.map((res) => {
+                        if (res.name != undefined && res.status == 1) {
+                          ss.push(res)
+                          that.setData({
+                            ss: ss
+                          })
+                        }
+                      })
+                      if (res.data && res.data.data) {
+                        my.setNavigationBar({
+                          title: res.data.data.groupName
+                        })
+                        that.setData({
+                          freeMins: res.data.data.freeMins,
+                          businessTime: res.data.data.businessTime,
+                          desc: res.data.data.descList,
+                          currentFee: res.data.data.currentFee,
+                          currentTimePeriod: res.data.data.currentTimePeriod + "   |  ",
+                          topFee: res.data.data.topFee,
+                          prefectureId: res.data.data.preId,
+                          groupName: res.data.data.groupName
+                        })
+                        if (res.data.data.parkingDataMap == "") {
+                          that.setData({
+                            parkingMap: null
+                          })
+                        } else if (res.data && res.data.data) {
+                          let parkingMap = {};
+                          res.data.data.parkingDataMap.forEach(item => {
+                            let key = (item.x) + ',' + (item.y)
+                            parkingMap[key] = item
+                          })
+                          // console.log(parkingMap)
+                          that.setData({
+                            chessboardXvalue: res.data.data.gridX,
+                            chessboardYvalue: res.data.data.gridY,
+                            parkingMap: parkingMap,
+                          })
+                        }
+                      }
+                    }
+                  }, app.token)
+
+                  if (!result.data.data.id) {
+                    console.log('用户未注册')
+                    my.hideLoading();
+                    app.login = false
+                    return
+                  }
+                  app.login = true
+                  app.mobile = result.data.data.mobile
+                  console.log('已经注册')
+
+                  api.GET({
+                    url: app.url.current,//当前订单
+                    params: {},
+                    success(res) {
+                      // console.log(res, "LLLLLLLLLLLLLLLLLSSSSSSSSSSS")
+                      if (!res.data.status) {
+                        my.hideLoading();
+                        return
+                      }
+                      if (res.data.data == null) {
+                      } else {
+                        console.log('跳转页面')
+                        my.navigateTo({
+                          url: '/pages/mycarmodule/mycarmodule',
+                        })
+                      }
+                      my.hideLoading();
+                    }
+                  }, app.token)
+                },
+                fail: (error) => {
+                  console.log(error)
+                  my.showToast({
+                    type: 'fail',
+                    content: error.data,
+                    duration: 2000
+                  });
+                  my.hideLoading();
+                }
+              }, app.token)
+            } else {
+              my.hideLoading();
+            }
           }
-        }
-      })
+        })
     }
   },
   onReady() {
@@ -184,10 +186,10 @@ Page({
     })
     // 页面显示
     if (app.token) {
-      my.showLoading({
-        content: '加载中...',
-        delay: 0,
-      });
+      // my.showLoading({
+      //   content: '加载中...',
+      //   delay: 0,
+      // });
       that.plate_list()
       api.GET({
         url: app.url.current,//当前订单
@@ -199,7 +201,7 @@ Page({
           }
           if (res.data.data == null) {
             api.GET({
-              url: app.url.car_list + '?parkCode=35305761',//渲染车位接口
+              url: app.url.car_list + '?parkCode=' + app.parkCode,//渲染车位接口
               params: {},
               success: (res) => {
                 // console.log(res)
@@ -293,7 +295,7 @@ Page({
   list() {
     let that = this
     api.GET({
-      url: app.url.car_list + '?parkCode=35305761',//渲染车位接口
+      url: app.url.car_list + '?parkCode=' + app.parkCode,//渲染车位接口
       params: {},
       success: (res) => {
         // console.log(res)
@@ -414,10 +416,6 @@ Page({
 
   // 点击车位
   park(e) {
-    my.showLoading({
-      content: '加载中...',
-      delay: 0,
-    });
     let that = this
     console.log(e.target.dataset)
     this.setData({
@@ -433,12 +431,15 @@ Page({
     if (this.data.status == 1) {
       if (app.login == false) {
         //获取用户手机号（需授权）
-        my.hideLoading();
         that.setData({
           showBottom: true
         })
         return
       }
+      my.showLoading({
+        content: '加载中...',
+        delay: 0,
+      });
       this.setData({
         ind: e.target.dataset.dex,
         value: e.target.dataset.item
@@ -468,14 +469,12 @@ Page({
         }
       }, app.token)
     } else if (this.data.status == 2) {
-      my.hideLoading();
       this.setData({
         ind: -1,
         modalOpened_occupy: true,
         name_text: '该车位已被他人使用,请选择其他车位',
       })
     } else if (this.data.status == 4) {
-      my.hideLoading();
       this.setData({
         ind: -1,
         modalOpened_occupy: true,
@@ -523,7 +522,15 @@ Page({
   },
   //添加车牌号
   img_add() {
-    console.log('添加车牌号')
+    // console.log(this.data.plateList.length)
+    if (this.data.plateList.length >= 3) {
+      my.showToast({
+        type: 'fail',
+        content: '最多可添加三个车牌号',
+        duration: 2000
+      });
+      return
+    }
     app.number = true
     my.navigateTo({
       url: '/pages/addPlate/addPlate'
@@ -682,24 +689,31 @@ Page({
               url: app.url.current,//当前订单
               params: {},
               success(res) {
-                my.hideLoading();
                 if (res.data.data == null) {
-                  my.showToast({
-                    type: 'fail',
-                    content: '当前车位已被占用，请选择其他车位',
-                    duration: 2000
-                  })
+                  console.log('null')
+                  setTimeout(() => {
+                    my.hideLoading();
+                    my.navigateTo({
+                      url: '/pages/mycarmodule/mycarmodule',
+                    })
+                  }, 2000)
                 } else {
                   console.log('跳转页面')
+                  my.hideLoading();
                   my.navigateTo({
                     url: '/pages/mycarmodule/mycarmodule',
                   })
                 }
               }
             }, app.token)
-          }, 3000)
+          }, 4000)
         } else {
           my.hideLoading();
+          my.showToast({
+            type: 'fail',
+            content: '预约车位失败，请重新预约',
+            duration: 2000
+          })
         }
       }
     }, app.token)

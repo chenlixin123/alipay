@@ -6,7 +6,8 @@ Page({
     modalOpened: false,
     data: '',
     starttime: '',
-    endtime: ''
+    endtime: '',
+    number: true
   },
   onLoad(query) {
     // 页面加载
@@ -47,16 +48,22 @@ Page({
     // 页面显示
   },
   onHide() {
+    // console.log('执行了6666666666')
     // 页面隐藏
-     my.reLaunch({
-      url: "/pages/index/index"
-    })
+    // let that = this
+    // if (that.data.number == true) {
+    //   my.reLaunch({
+    //     url: "/pages/index/index"
+    //   })
+    // }
+
   },
   onUnload() {
     // 页面被关闭
-     my.reLaunch({
-      url: "/pages/index/index"
-    })
+    // console.log('执行了')
+    //   my.reLaunch({
+    //     url: "/pages/index/index"
+    //   })
   },
   onTitleClick() {
     // 标题被点击
@@ -79,8 +86,10 @@ Page({
     console.log('支付完成')
     // let pages = getCurrentPages(); //当前页面栈
     // my.navigateBack(-5)
-    my.reLaunch({
-      url: "/pages/index/index"
-    })
+    // setTimeout(() => {
+      my.reLaunch({
+        url: "/pages/index/index"
+      })
+    // }, 1000)
   }
 });

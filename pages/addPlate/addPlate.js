@@ -154,13 +154,9 @@ Page({
     console.log(nums)
     nums = nums.toString().replace(/,/g, '');
     console.log(nums)
-    if (nums == "") {
-      my.alert('请输入正确的车牌号');
-    }
     my.getStorage({
       key: 'abc',
       success: function (res) {
-        console.log(res.data, "KKKKKKKK")
         self.setData({
           obj: res.data
         })
